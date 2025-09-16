@@ -1,0 +1,52 @@
+[
+  {
+    "id": "1",
+    "name": "Sarah Mitchell",
+    "email": "sarah.mitchell@example.com",
+    "avatar": "/avatars/01.png",
+    "status": "online",
+    "lastSeen": "2024-01-15T10:30:00Z",
+    "role": "Project Manager",
+    "department": "Product"
+  },
+  {
+    "id": "2",
+    "name": "Alex Thompson",
+    "email": "alex.thompson@example.com",
+    "avatar": "/avatars/02.png",
+    "status": "away",
+    "lastSeen": "2024-01-15T09:45:00Z",
+    "role": "Senior Developer",
+    "department": "Engineering"
+  },
+  {
+    "id": "3",
+    "name": "Emily Rodriguez",
+    "email": "emily.rodriguez@example.com",
+    "avatar": "/avatars/03.png",
+    "status": "online",
+    "lastSeen": "2024-01-15T10:25:00Z",
+    "role": "UX Designer",
+    "department": "Design"
+  },
+  {
+    "id": "4",
+    "name": "David Kim",
+    "email": "david.kim@example.com",
+    "avatar": "/avatars/04.png",
+    "status": "offline",
+    "lastSeen": "2024-01-14T18:30:00Z",
+    "role": "Marketing Lead",
+    "department": "Marketing"
+  },
+  {
+    "id": "5",
+    "name": "Lisa Chen",
+    "email": "lisa.chen@example.com",
+    "avatar": "/avatars/05.png",
+    "status": "online",
+    "lastSeen": "2024-01-15T10:20:00Z",
+    "role": "QA Engineer",
+    "department": "Engineering"
+  }
+]

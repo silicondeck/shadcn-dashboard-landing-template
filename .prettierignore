@@ -1,0 +1,23 @@
+# Build outputs
+dist/
+build/
+.next/
+out/
+
+# Dependencies
+node_modules/
+
+# Logs
+*.log
+
+# Generated files
+pnpm-lock.yaml
+package-lock.json
+yarn.lock
+
+# Ignore HTML files in public directories
+**/public/**/*.html
+
+# Ignore specific config files
+.prettierrc
+.prettierignore
