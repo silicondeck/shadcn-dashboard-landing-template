@@ -85,6 +85,4 @@ storybook-static
 *.sw?
 
 # Deployment scripts (contain server-specific paths)
-deploy.sh
-build-for-*.sh
 *.env.production
