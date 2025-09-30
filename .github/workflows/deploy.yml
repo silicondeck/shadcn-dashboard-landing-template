@@ -74,17 +74,19 @@ jobs:
         env:
           BASE_URL: ${{ steps.deploy-vars.outputs.BASE_URL }}
           BASENAME: ${{ steps.deploy-vars.outputs.BASENAME }}
+          VITE_GTM_ID: ${{ secrets.VITE_GTM_ID }}
         run: |
           echo "🔨 Building template with configuration:"
           echo "  Base URL: $BASE_URL"
           echo "  Basename: $BASENAME"
           echo "  Environment: ${{ env.DEPLOY_ENV }}"
+          echo "  GTM ID: ${VITE_GTM_ID:0:7}***" # Show only first 7 chars for security
 
           # Clean previous build
           rm -rf dist/
 
           # Build with deployment configuration
-          VITE_BASENAME="$BASENAME" pnpm exec vite build --base="$BASE_URL"
+          VITE_BASENAME="$BASENAME" VITE_GTM_ID="$VITE_GTM_ID" pnpm exec vite build --base="$BASE_URL"
 
           # Verify build output
           echo "📁 Build output:"
