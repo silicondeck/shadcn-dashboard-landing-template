@@ -16,7 +16,7 @@ Introducing a sleek, modern, and open-source admin dashboard template built with
 
 <div align="center">
 
-🎯 <a href="https://shadcnstore.com/templates/dashboard/shadcn-dashboard-landing-template" target="_blank">**View Live Demo**</a> | 🧩 <a href="https://shadcnstore.com/blocks" target="_blank">**Explore Premium Blocks**</a>
+🎯 <a href="https://shadcnstore.com/templates/dashboard/shadcn-dashboard-landing-template/dashboard" target="_blank">**View Live Demo**</a> | 🧩 <a href="https://shadcnstore.com/blocks" target="_blank">**Explore Premium Blocks**</a>
 
 </div>
 
@@ -26,8 +26,8 @@ Introducing a sleek, modern, and open-source admin dashboard template built with
 
 Experience the template in action:
 
-- **[🖥️ Dashboard Demo](https://shadcnstore.com/templates/dashboard/shadcn-dashboard-landing-template)** - Complete admin dashboard with apps
-- **[🌐 Landing Page Demo](https://shadcnstore.com/templates/landing/shadcn-dashboard-landing-template)** - Beautiful marketing landing page
+- **[🖥️ Dashboard Demo](https://shadcnstore.com/templates/dashboard/shadcn-dashboard-landing-template/dashboard)** - Complete admin dashboard with apps
+- **[🌐 Landing Page Demo](https://shadcnstore.com/templates/dashboard/shadcn-dashboard-landing-template/landing)** - Beautiful marketing landing page
 
 > **Note**: This template includes both a complete dashboard (with mail, tasks, chat, calendar apps) and a marketing landing page in both Vite and Next.js versions.
 
@@ -60,7 +60,7 @@ Experience the template in action:
 - **2 Dashboard Variants** - Overview & Analytics dashboards
 - **App Demos** - Mail, Tasks, Chat, Calendar, Users applications
 - **30+ Pages** - Authentication, Settings, Errors, FAQ, Pricing
-- **Data Tables** - Advanced tables with sorting, filtering, pagination
+- **Data Tables** - Advanced tables with sorting, filtering, and pagination
 - **Charts & Analytics** - Recharts integration with beautiful visualizations
 
 ### 🎨 **Design & Theming**
@@ -185,12 +185,12 @@ pnpm dev
 
 ### 3. Start Building
 
-- **Dashboard:** Navigate to [/dashboard](https://shadcnstore.com/shadcn-dashboard/dashboard) or [/dashboard-2](https://shadcnstore.com/shadcn-dashboard/dashboard-2)
-- **Landing Page:** Visit [/landing](https://shadcnstore.com/shadcn-dashboard/landing) for the business template
+- **Dashboard:** Navigate to [/dashboard](https://shadcnstore.com/templates/dashboard/shadcn-dashboard-landing-template/dashboard) or [/dashboard-2](https://shadcnstore.com/templates/dashboard/shadcn-dashboard-landing-template/dashboard-2)
+- **Landing Page:** Visit [/landing](https://shadcnstore.com/templates/dashboard/shadcn-dashboard-landing-template/landing) for the business template
 - **Theme Customizer:** Use the built-in customizer to preview themes live
-- **Apps:** Explore [Mail](https://shadcnstore.com/shadcn-dashboard/mail), [Tasks](https://shadcnstore.com/shadcn-dashboard/tasks), [Chat](https://shadcnstore.com/shadcn-dashboard/chat), [Calendar](https://shadcnstore.com/shadcn-dashboard/calendar), [Users](https://shadcnstore.com/shadcn-dashboard/users)
-- **Authentication:** Check out [Login](https://shadcnstore.com/shadcn-dashboard/login), [Signup](https://shadcnstore.com/shadcn-dashboard/signup), [Forgot Password](https://shadcnstore.com/shadcn-dashboard/forgot-password)
-- **Settings:** Visit [Account](https://shadcnstore.com/shadcn-dashboard/settings/account), [Appearance](https://shadcnstore.com/shadcn-dashboard/settings/appearance), [Billing](https://shadcnstore.com/shadcn-dashboard/settings/billing)
+- **Apps:** Explore [Mail](https://shadcnstore.com/templates/dashboard/shadcn-dashboard-landing-template/mail), [Tasks](https://shadcnstore.com/templates/dashboard/shadcn-dashboard-landing-template/tasks), [Chat](https://shadcnstore.com/templates/dashboard/shadcn-dashboard-landing-template/chat), [Calendar](https://shadcnstore.com/templates/dashboard/shadcn-dashboard-landing-template/calendar), [Users](https://shadcnstore.com/templates/dashboard/shadcn-dashboard-landing-template/users)
+- **Authentication:** Check out [Signin](https://shadcnstore.com/templates/dashboard/shadcn-dashboard-landing-template/auth/sign-in), [Signup](https://shadcnstore.com/templates/dashboard/shadcn-dashboard-landing-template/auth/sign-up), [Forgot Password](https://shadcnstore.com/templates/dashboard/shadcn-dashboard-landing-template/auth/forgot-password)
+- **Settings:** Visit [Account](https://shadcnstore.com/templates/dashboard/shadcn-dashboard-landing-template/settings/account), [Appearance](https://shadcnstore.com/templates/dashboard/shadcn-dashboard-landing-template/settings/appearance), [Billing](https://shadcnstore.com/templates/dashboard/shadcn-dashboard-landing-template/settings/billing)
 
 ---
 
