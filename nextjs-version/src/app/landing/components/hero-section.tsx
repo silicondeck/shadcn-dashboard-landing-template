@@ -9,7 +9,7 @@ import { DotPattern } from '@/components/dot-pattern'
 
 export function HeroSection() {
   return (
-    <section className="relative overflow-hidden bg-gradient-to-b from-background to-background/80 pt-20 sm:pt-32 pb-16">
+    <section id="hero" className="relative overflow-hidden bg-gradient-to-b from-background to-background/80 pt-20 sm:pt-32 pb-16">
       {/* Background Pattern */}
       <div className="absolute inset-0">
         {/* Dot pattern overlay using reusable component */}

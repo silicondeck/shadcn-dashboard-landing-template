@@ -30,7 +30,7 @@ import { ModeToggle } from '@/components/mode-toggle'
 import { useTheme } from '@/hooks/use-theme'
 
 const navigationItems = [
-  { name: 'Home', href: '/landing' },
+  { name: 'Home', href: '#hero' },
   { name: 'Features', href: '#features' },
   { name: 'Solutions', href: '#features', hasMegaMenu: true },
   { name: 'Team', href: '#team' },
@@ -81,7 +81,7 @@ export function LandingNavbar() {
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 flex h-16 items-center justify-between">
         {/* Logo */}
         <div className="flex items-center space-x-2">
-          <Link href="/landing" className="flex items-center space-x-2 cursor-pointer">
+          <Link href="https://shadcnstore.com" className="flex items-center space-x-2 cursor-pointer" target='_blank' rel="noopener noreferrer">
             <Logo size={32} />
             <span className="font-bold">
               ShadcnStore
