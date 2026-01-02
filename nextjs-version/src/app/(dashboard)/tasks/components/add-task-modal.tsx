@@ -23,9 +23,8 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select"
-import { Badge } from "@/components/ui/badge"
 
-import { priorities, statuses, labels } from "../data/data"
+import { priorities, statuses, categories } from "../data/data"
 import type { Task } from "../data/schema"
 
 // Extended task schema for the form
@@ -34,7 +33,7 @@ const taskFormSchema = z.object({
   title: z.string().min(1, "Title is required"),
   description: z.string().optional(),
   status: z.string(),
-  label: z.string(),
+  category: z.string(),
   priority: z.string(),
 })
 
@@ -52,8 +51,8 @@ export function AddTaskModal({ onAddTask, trigger }: AddTaskModalProps) {
     title: "",
     description: "",
     status: "todo",
-    label: "feature",
-    priority: "medium",
+    category: "feature",
+    priority: "normal",
   })
   const [errors, setErrors] = useState<Record<string, string>>({})
 
@@ -66,7 +65,7 @@ export function AddTaskModal({ onAddTask, trigger }: AddTaskModalProps) {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault()
-    
+
     try {
       // Validate form data
       const validatedData = taskFormSchema.parse({
@@ -79,20 +78,20 @@ export function AddTaskModal({ onAddTask, trigger }: AddTaskModalProps) {
         id: validatedData.id,
         title: validatedData.title,
         status: validatedData.status,
-        label: validatedData.label,
+        category: validatedData.category,
         priority: validatedData.priority,
       }
 
       onAddTask?.(newTask)
-      
+
       // Reset form and close modal
       setFormData({
         id: "",
         title: "",
         description: "",
         status: "todo",
-        label: "feature",
-        priority: "medium",
+        category: "feature",
+        priority: "normal",
       })
       setErrors({})
       setOpen(false)
@@ -115,8 +114,8 @@ export function AddTaskModal({ onAddTask, trigger }: AddTaskModalProps) {
       title: "",
       description: "",
       status: "todo",
-      label: "feature",
-      priority: "medium",
+      category: "feature",
+      priority: "normal",
     })
     setErrors({})
     setOpen(false)
@@ -127,7 +126,7 @@ export function AddTaskModal({ onAddTask, trigger }: AddTaskModalProps) {
       <DialogTrigger asChild>
         {trigger || (
           <Button variant="default" size="sm" className="cursor-pointer">
-            <Plus className="w-4 h-4 mr-2" />
+            <Plus className="w-4 h-4" />
             Add Task
           </Button>
         )}
@@ -139,7 +138,7 @@ export function AddTaskModal({ onAddTask, trigger }: AddTaskModalProps) {
             Create a new task to track work and progress. Fill in the details below.
           </DialogDescription>
         </DialogHeader>
-        
+
         <form onSubmit={handleSubmit} className="space-y-6">
           {/* Task Title */}
           <div className="space-y-2">
@@ -168,76 +167,76 @@ export function AddTaskModal({ onAddTask, trigger }: AddTaskModalProps) {
             />
           </div>
 
-          {/* Task Status */}
-          <div className="space-y-2">
-            <Label htmlFor="status">Status</Label>
-            <Select
-              value={formData.status}
-              onValueChange={(value) => setFormData(prev => ({ ...prev, status: value }))}
-            >
-              <SelectTrigger>
-                <SelectValue placeholder="Select status" />
-              </SelectTrigger>
-              <SelectContent>
-                {statuses.map((status) => (
-                  <SelectItem key={status.value} value={status.value}>
-                    <div className="flex items-center">
-                      {status.icon && (
-                        <status.icon className="mr-2 h-4 w-4 text-muted-foreground" />
-                      )}
-                      {status.label}
-                    </div>
-                  </SelectItem>
-                ))}
-              </SelectContent>
-            </Select>
+          {/* Task Status and Category - Side by Side */}
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+            {/* Task Status */}
+            <div className="space-y-2">
+              <Label htmlFor="status">Status</Label>
+              <Select
+                value={formData.status}
+                onValueChange={(value) => setFormData(prev => ({ ...prev, status: value }))}
+              >
+                <SelectTrigger className="w-full">
+                  <SelectValue placeholder="Select status" />
+                </SelectTrigger>
+                <SelectContent>
+                  {statuses.map((status) => (
+                    <SelectItem key={status.value} value={status.value}>
+                      <div className="flex items-center">
+                        {status.icon && (
+                          <status.icon className="mr-2 h-4 w-4 text-muted-foreground" />
+                        )}
+                        {status.label}
+                      </div>
+                    </SelectItem>
+                  ))}
+                </SelectContent>
+              </Select>
+            </div>
+
+            {/* Task Category */}
+            <div className="space-y-2">
+              <Label htmlFor="category">Category</Label>
+              <Select
+                value={formData.category}
+                onValueChange={(value) => setFormData(prev => ({ ...prev, category: value }))}
+              >
+                <SelectTrigger className="w-full">
+                  <SelectValue placeholder="Select category" />
+                </SelectTrigger>
+                <SelectContent>
+                  {categories.map((category) => (
+                    <SelectItem key={category.value} value={category.value}>
+                      {category.label}
+                    </SelectItem>
+                  ))}
+                </SelectContent>
+              </Select>
+            </div>
           </div>
 
-          {/* Task Label */}
-          <div className="space-y-2">
-            <Label htmlFor="label">Label</Label>
-            <Select
-              value={formData.label}
-              onValueChange={(value) => setFormData(prev => ({ ...prev, label: value }))}
-            >
-              <SelectTrigger>
-                <SelectValue placeholder="Select label" />
-              </SelectTrigger>
-              <SelectContent>
-                {labels.map((label) => (
-                  <SelectItem key={label.value} value={label.value}>
-                    <Badge variant="outline" className="cursor-pointer">
-                      {label.label}
-                    </Badge>
-                  </SelectItem>
-                ))}
-              </SelectContent>
-            </Select>
-          </div>
-
-          {/* Task Priority */}
-          <div className="space-y-2">
-            <Label htmlFor="priority">Priority</Label>
-            <Select
-              value={formData.priority}
-              onValueChange={(value) => setFormData(prev => ({ ...prev, priority: value }))}
-            >
-              <SelectTrigger>
-                <SelectValue placeholder="Select priority" />
-              </SelectTrigger>
-              <SelectContent>
-                {priorities.map((priority) => (
-                  <SelectItem key={priority.value} value={priority.value}>
-                    <div className="flex items-center">
-                      {priority.icon && (
-                        <priority.icon className="mr-2 h-4 w-4 text-muted-foreground" />
-                      )}
-                      {priority.label}
-                    </div>
-                  </SelectItem>
-                ))}
-              </SelectContent>
-            </Select>
+          {/* Task Priority - Half Width on Desktop */}
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <div className="space-y-2">
+              <Label htmlFor="priority">Priority</Label>
+              <Select
+                value={formData.priority}
+                onValueChange={(value) => setFormData(prev => ({ ...prev, priority: value }))}
+              >
+                <SelectTrigger className="w-full">
+                  <SelectValue placeholder="Select priority" />
+                </SelectTrigger>
+                <SelectContent>
+                  {priorities.map((priority) => (
+                    <SelectItem key={priority.value} value={priority.value}>
+                      <div className="flex items-center">
+                        {priority.label}
+                      </div>
+                    </SelectItem>
+                  ))}
+                </SelectContent>
+              </Select>
+            </div>
           </div>
 
           {/* Action Buttons */}

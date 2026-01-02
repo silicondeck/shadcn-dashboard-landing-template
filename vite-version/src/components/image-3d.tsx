@@ -30,7 +30,7 @@ export function Image3D({
 
           {/* Depth layers for 3D effect */}
           <div className="absolute inset-0 translate-y-4 translate-x-2 -translate-z-8 rounded-2xl">
-            <div className="size-full rounded-2xl border border-primary/30 bg-gradient-to-br from-primary/10 via-background/40 to-secondary/10 shadow-xl" />
+            <div className="size-full rounded-2xl bg-gradient-to-br from-primary/10 via-background/40 to-secondary/10 shadow-xl" />
           </div>
 
           {/* Main image container */}

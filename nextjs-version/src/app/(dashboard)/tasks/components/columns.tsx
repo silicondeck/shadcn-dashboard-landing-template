@@ -4,8 +4,9 @@ import type { ColumnDef } from "@tanstack/react-table"
 
 import { Badge } from "@/components/ui/badge"
 import { Checkbox } from "@/components/ui/checkbox"
+import { cn } from "@/lib/utils"
 
-import { labels, priorities, statuses } from "../data/data"
+import { categories, priorities, statuses } from "../data/data"
 import type { Task } from "../data/schema"
 import { DataTableColumnHeader } from "./data-table-column-header"
 import { DataTableRowActions } from "./data-table-row-actions"
@@ -40,8 +41,9 @@ export const columns: ColumnDef<Task>[] = [
     header: ({ column }) => (
       <DataTableColumnHeader column={column} title="Task" />
     ),
-    cell: ({ row }) => <div className="w-[80px]">{row.getValue("id")}</div>,
-    enableSorting: false,
+    cell: ({ row }) => (
+      <div className="w-[90px] font-medium">{row.getValue("id")}</div>
+    ),
     enableHiding: false,
   },
   {
@@ -50,16 +52,39 @@ export const columns: ColumnDef<Task>[] = [
       <DataTableColumnHeader column={column} title="Title" />
     ),
     cell: ({ row }) => {
-      const label = labels.find((label) => label.value === row.original.label)
-
       return (
         <div className="flex space-x-2">
-          {label && <Badge variant="outline" className="cursor-pointer">{label.label}</Badge>}
           <span className="max-w-[500px] truncate font-medium">
             {row.getValue("title")}
           </span>
         </div>
       )
+    },
+  },
+  {
+    accessorKey: "category",
+    header: ({ column }) => (
+      <DataTableColumnHeader column={column} title="Category" />
+    ),
+    cell: ({ row }) => {
+      const category = categories.find(
+        (cat) => cat.value === row.getValue("category")
+      )
+
+      if (!category) {
+        return null
+      }
+
+      return (
+        <div className="flex w-[120px] items-center">
+          <Badge variant="outline">
+            {category.label}
+          </Badge>
+        </div>
+      )
+    },
+    filterFn: (row, id, value) => {
+      return value.includes(row.getValue(id))
     },
   },
   {
@@ -77,11 +102,11 @@ export const columns: ColumnDef<Task>[] = [
       }
 
       return (
-        <div className="flex w-[100px] items-center">
+        <div className="flex w-[130px] items-center">
           {status.icon && (
             <status.icon className="mr-2 h-4 w-4 text-muted-foreground" />
           )}
-          <span>{status.label}</span>
+          <span className="text-sm">{status.label}</span>
         </div>
       )
     },
@@ -103,12 +128,24 @@ export const columns: ColumnDef<Task>[] = [
         return null
       }
 
+      const priorityColors = {
+        critical: "border-red-700 text-red-700 dark:text-red-400",
+        important: "border-orange-500 text-orange-700 dark:text-orange-400",
+        normal: "border-blue-500 text-blue-700 dark:text-blue-400",
+        minor: "border-gray-500 text-gray-700 dark:text-gray-400",
+      }
+
       return (
         <div className="flex items-center">
-          {priority.icon && (
-            <priority.icon className="mr-2 h-4 w-4 text-muted-foreground" />
-          )}
-          <span>{priority.label}</span>
+          <Badge
+            variant="outline"
+            className={cn(
+              "pl-2",
+              priorityColors[priority.value as keyof typeof priorityColors]
+            )}
+          >
+            <span className="text-sm">{priority.label}</span>
+          </Badge>
         </div>
       )
     },

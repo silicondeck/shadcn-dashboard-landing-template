@@ -1,15 +1,11 @@
 import {
-  ArrowDown,
-  ArrowRight,
-  ArrowUp,
-  CheckCircle,
+  CheckCircle2,
   Circle,
-  CircleOff,
-  HelpCircle,
-  Timer,
+  Clock,
+  PlayCircle,
 } from "lucide-react"
 
-export const labels = [
+export const categories = [
   {
     value: "bug",
     label: "Bug",
@@ -20,15 +16,23 @@ export const labels = [
   },
   {
     value: "documentation",
-    label: "Documentation",
+    label: "Docs",
+  },
+  {
+    value: "improvement",
+    label: "Improvement",
+  },
+  {
+    value: "refactor",
+    label: "Refactor",
   },
 ]
 
 export const statuses = [
   {
-    value: "backlog",
-    label: "Backlog",
-    icon: HelpCircle,
+    value: "pending",
+    label: "Pending",
+    icon: Clock,
   },
   {
     value: "todo",
@@ -38,34 +42,30 @@ export const statuses = [
   {
     value: "in progress",
     label: "In Progress",
-    icon: Timer,
+    icon: PlayCircle,
   },
   {
-    value: "done",
-    label: "Done",
-    icon: CheckCircle,
-  },
-  {
-    value: "canceled",
-    label: "Canceled",
-    icon: CircleOff,
+    value: "completed",
+    label: "Completed",
+    icon: CheckCircle2,
   },
 ]
 
 export const priorities = [
   {
-    label: "Low",
-    value: "low",
-    icon: ArrowDown,
+    label: "Minor",
+    value: "minor"
   },
   {
-    label: "Medium",
-    value: "medium",
-    icon: ArrowRight,
+    label: "Normal",
+    value: "normal"
   },
   {
-    label: "High",
-    value: "high",
-    icon: ArrowUp,
+    label: "Important",
+    value: "important"
+  },
+  {
+    label: "Critical",
+    value: "critical"
   },
 ]

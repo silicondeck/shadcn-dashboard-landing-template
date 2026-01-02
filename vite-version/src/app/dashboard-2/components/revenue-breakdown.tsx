@@ -27,7 +27,7 @@ const chartConfig = {
     color: "var(--chart-1)",
   },
   sales: {
-    label: "One-time Sales", 
+    label: "One-time Sales",
     color: "var(--chart-2)",
   },
   services: {
@@ -48,7 +48,7 @@ export function RevenueBreakdown() {
     () => revenueData.findIndex((item) => item.category === activeCategory),
     [activeCategory]
   )
-  
+
   const categories = React.useMemo(() => revenueData.map((item) => item.category), [])
 
   return (
@@ -119,7 +119,6 @@ export function RevenueBreakdown() {
                   nameKey="category"
                   innerRadius={60}
                   strokeWidth={5}
-                  activeIndex={activeIndex}
                   activeShape={({
                     outerRadius = 0,
                     ...props
@@ -167,14 +166,14 @@ export function RevenueBreakdown() {
               </PieChart>
             </ChartContainer>
           </div>
-          
+
           <div className="flex flex-col justify-center space-y-4">
             {revenueData.map((item, index) => {
               const config = chartConfig[item.category as keyof typeof chartConfig]
               const isActive = index === activeIndex
-              
+
               return (
-                <div 
+                <div
                   key={item.category}
                   className={`flex items-center justify-between p-3 rounded-lg transition-colors cursor-pointer ${
                     isActive ? 'bg-muted' : 'hover:bg-muted/50'

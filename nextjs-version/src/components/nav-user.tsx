@@ -100,7 +100,7 @@ export function NavUser({
             </DropdownMenuGroup>
             <DropdownMenuSeparator />
             <DropdownMenuItem asChild className="cursor-pointer">
-              <Link href="/auth/sign-in">
+              <Link href="/sign-in">
                 <LogOut />
                 Log out
               </Link>

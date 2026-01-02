@@ -14,7 +14,7 @@ const transactions = [
     customer: {
       name: "Olivia Martin",
       email: "olivia.martin@email.com",
-      avatar: assetUrl("avatars/01.png"),
+      avatar: assetUrl("https://notion-avatars.netlify.app/api/avatar/?preset=female-"),
     },
     amount: "$1,999.00",
     status: "completed",
@@ -25,7 +25,7 @@ const transactions = [
     customer: {
       name: "Jackson Lee",
       email: "jackson.lee@email.com",
-      avatar: assetUrl("avatars/02.png"),
+      avatar: assetUrl("https://notion-avatars.netlify.app/api/avatar/?preset=male-1"),
     },
     amount: "$2,999.00",
     status: "pending",
@@ -36,7 +36,7 @@ const transactions = [
     customer: {
       name: "Isabella Nguyen",
       email: "isabella.nguyen@email.com",
-      avatar: assetUrl("avatars/03.png"),
+      avatar: assetUrl("https://notion-avatars.netlify.app/api/avatar/?preset=female-2"),
     },
     amount: "$39.00",
     status: "completed",
@@ -47,7 +47,7 @@ const transactions = [
     customer: {
       name: "William Kim",
       email: "will@email.com",
-      avatar: assetUrl("avatars/04.png"),
+      avatar: assetUrl("https://notion-avatars.netlify.app/api/avatar/?preset=male-5"),
     },
     amount: "$299.00",
     status: "failed",
@@ -58,7 +58,7 @@ const transactions = [
     customer: {
       name: "Sofia Davis",
       email: "sofia.davis@email.com",
-      avatar: assetUrl("avatars/05.png"),
+      avatar: assetUrl("https://notion-avatars.netlify.app/api/avatar/?preset=female-4"),
     },
     amount: "$99.00",
     status: "completed",

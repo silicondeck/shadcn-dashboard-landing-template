@@ -4,7 +4,7 @@
     "type": "direct",
     "participants": ["1"],
     "name": "Sarah Mitchell",
-    "avatar": "/avatars/01.png",
+    "avatar": "https://notion-avatars.netlify.app/api/avatar/?preset=female-7",
     "lastMessage": {
       "id": "msg-1-4",
       "content": "Thanks for the quick update! The dashboard looks amazing 🎉",
@@ -20,7 +20,6 @@
     "type": "group",
     "participants": ["2", "3", "5"],
     "name": "Project Alpha",
-    "avatar": "/avatars/team-alpha.png",
     "lastMessage": {
       "id": "msg-2-8",
       "content": "David: Marketing campaign is scheduled for next week",
@@ -36,7 +35,6 @@
     "type": "group",
     "participants": ["2", "3", "5"],
     "name": "Frontend Team",
-    "avatar": "/avatars/team-frontend.png",
     "lastMessage": {
       "id": "msg-3-6",
       "content": "Alex: The new component library is ready for testing",
@@ -52,7 +50,7 @@
     "type": "direct",
     "participants": ["3"],
     "name": "Emily Rodriguez",
-    "avatar": "/avatars/03.png",
+    "avatar": "https://notion-avatars.netlify.app/api/avatar/?preset=female-2",
     "lastMessage": {
       "id": "msg-4-3",
       "content": "Let's review the wireframes together tomorrow",
@@ -68,7 +66,7 @@
     "type": "direct",
     "participants": ["5"],
     "name": "Lisa Chen",
-    "avatar": "/avatars/05.png",
+    "avatar": "https://notion-avatars.netlify.app/api/avatar/?preset=female-4",
     "lastMessage": {
       "id": "msg-5-3",
       "content": "Found a few edge cases in the new feature",
@@ -84,7 +82,7 @@
     "type": "direct",
     "participants": ["2"],
     "name": "Alex Thompson",
-    "avatar": "/avatars/02.png",
+    "avatar": "https://notion-avatars.netlify.app/api/avatar/?preset=male-1",
     "lastMessage": {
       "id": "msg-6-3",
       "content": "Code review completed, looks good to merge! 👍",

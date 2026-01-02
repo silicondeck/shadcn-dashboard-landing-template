@@ -3,28 +3,24 @@ import type { NextConfig } from "next";
 const nextConfig: NextConfig = {
   experimental: {
     optimizePackageImports: ["lucide-react", "@radix-ui/react-icons"],
-    turbo: {
-      rules: {
-        '*.svg': {
-          loaders: ['@svgr/webpack'],
-          as: '*.js',
-        },
-      },
-    },
   },
-  
+  turbopack: {},
+
   // Image optimization
   images: {
-    domains: ['ui.shadcn.com', 'images.unsplash.com'],
+    remotePatterns: [
+      {
+        protocol: 'https',
+        hostname: 'ui.shadcn.com',
+      },
+      {
+        protocol: 'https',
+        hostname: 'images.unsplash.com',
+      },
+    ],
     formats: ['image/webp', 'image/avif'],
   },
-  
-  // Webpack configuration
-  webpack: (config, { buildId, dev, isServer, defaultLoaders, webpack }) => {
-    // Add custom webpack rules if needed
-    return config;
-  },
-  
+
   // Headers for better security and performance
   async headers() {
     return [
@@ -47,7 +43,7 @@ const nextConfig: NextConfig = {
       },
     ];
   },
-  
+
   // Redirects for better SEO
   async redirects() {
     return [

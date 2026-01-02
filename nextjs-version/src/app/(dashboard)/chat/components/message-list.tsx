@@ -61,7 +61,7 @@ export function MessageList({ messages, users, currentUserId = "current-user" }:
       return {
         id: currentUserId,
         name: "You",
-        avatar: "/avatars/current-user.png",
+        avatar: "https://notion-avatars.netlify.app/api/avatar/?preset=male-7",
         status: "online" as const,
         email: "you@example.com",
         lastSeen: new Date().toISOString(),

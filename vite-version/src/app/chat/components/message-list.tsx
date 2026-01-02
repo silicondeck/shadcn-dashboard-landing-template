@@ -8,13 +8,12 @@ import { cn } from "@/lib/utils"
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
 import { Button } from "@/components/ui/button"
 import { ScrollArea } from "@/components/ui/scroll-area"
-import { assetUrl } from "@/lib/utils"
-import { 
+import {
   DropdownMenu,
   DropdownMenuContent,
   DropdownMenuItem,
   DropdownMenuSeparator,
-  DropdownMenuTrigger 
+  DropdownMenuTrigger
 } from "@/components/ui/dropdown-menu"
 import { type Message, type User } from "@/app/chat/use-chat"
 
@@ -53,16 +52,16 @@ export function MessageList({ messages, users, currentUserId = "current-user" }:
     if (messages.length > previousMessageCountRef.current && bottomRef.current) {
       bottomRef.current.scrollIntoView({ behavior: "smooth" })
     }
-    
+
     previousMessageCountRef.current = messages.length
   }, [messages])
 
   const getUserById = (userId: string) => {
     if (userId === currentUserId) {
-      return { 
-        id: currentUserId, 
-        name: "You", 
-        avatar: assetUrl("avatars/current-user.png"),
+      return {
+        id: currentUserId,
+        name: "You",
+        avatar: "https://notion-avatars.netlify.app/api/avatar/?preset=male-7",
         status: "online" as const,
         email: "you@example.com",
         lastSeen: new Date().toISOString(),
@@ -87,7 +86,7 @@ export function MessageList({ messages, users, currentUserId = "current-user" }:
   const shouldShowAvatar = (message: Message, index: number) => {
     if (message.senderId === currentUserId) return false
     if (index === 0) return true
-    
+
     const prevMessage = messages[index - 1]
     return prevMessage.senderId !== message.senderId
   }
@@ -95,27 +94,27 @@ export function MessageList({ messages, users, currentUserId = "current-user" }:
   const shouldShowName = (message: Message, index: number) => {
     if (message.senderId === currentUserId) return false
     if (index === 0) return true
-    
+
     const prevMessage = messages[index - 1]
     return prevMessage.senderId !== message.senderId
   }
 
   const isConsecutiveMessage = (message: Message, index: number) => {
     if (index === 0) return false
-    
+
     const prevMessage = messages[index - 1]
     const timeDiff = new Date(message.timestamp).getTime() - new Date(prevMessage.timestamp).getTime()
-    
+
     return prevMessage.senderId === message.senderId && timeDiff < 5 * 60 * 1000 // 5 minutes
   }
 
   const groupMessagesByDay = (messages: Message[]) => {
     const groups: { date: string; messages: Message[] }[] = []
-    
+
     messages.forEach((message) => {
       const messageDate = format(new Date(message.timestamp), "yyyy-MM-dd")
       const lastGroup = groups[groups.length - 1]
-      
+
       if (lastGroup && lastGroup.date === messageDate) {
         lastGroup.messages.push(message)
       } else {
@@ -125,7 +124,7 @@ export function MessageList({ messages, users, currentUserId = "current-user" }:
         })
       }
     })
-    
+
     return groups
   }
 
@@ -207,7 +206,7 @@ export function MessageList({ messages, users, currentUserId = "current-user" }:
                           )}
                         >
                           <p>{message.content}</p>
-                          
+
                           {/* Message reactions */}
                           {message.reactions.length > 0 && (
                             <div className="flex gap-1 mt-2">
@@ -225,12 +224,12 @@ export function MessageList({ messages, users, currentUserId = "current-user" }:
                               ))}
                             </div>
                           )}
-                          
+
                           {/* Timestamp and status */}
                           <div className={cn(
                             "flex items-center gap-1 mt-1 text-xs",
-                            isOwnMessage 
-                              ? "text-primary-foreground/70 justify-end" 
+                            isOwnMessage
+                              ? "text-primary-foreground/70 justify-end"
                               : "text-muted-foreground"
                           )}>
                             <span>{formatMessageTime(message.timestamp)}</span>
@@ -287,7 +286,7 @@ export function MessageList({ messages, users, currentUserId = "current-user" }:
             </div>
           </div>
         ))}
-        
+
         {/* Scroll anchor */}
         <div ref={bottomRef} />
       </div>
