@@ -119,7 +119,7 @@ export function SignupForm3({
               </div>
               <div className="text-center text-sm">
                 Already have an account?{" "}
-                <a href="/auth/sign-in-3" className="underline underline-offset-4">
+                <a href="/templates/dashboard/shadcn-dashboard-landing-template/auth/sign-in-3" className="underline underline-offset-4">
                   Sign in
                 </a>
               </div>

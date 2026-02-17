@@ -109,7 +109,7 @@ export function LoginForm1({
                 </div>
                 <div className="text-center text-sm">
                   Don&apos;t have an account?{" "}
-                  <a href="/auth/sign-up" className="underline underline-offset-4">
+                  <a href="/templates/dashboard/shadcn-dashboard-landing-template/auth/sign-up" className="underline underline-offset-4">
                     Sign up
                   </a>
                 </div>

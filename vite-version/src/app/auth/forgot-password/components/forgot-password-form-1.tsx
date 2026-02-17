@@ -44,7 +44,7 @@ export function ForgotPasswordForm1({
               </div>
               <div className="text-center text-sm">
                 Remember your password?{" "}
-                <a href="/auth/sign-in" className="underline underline-offset-4">
+                <a href="/templates/dashboard/shadcn-dashboard-landing-template/auth/sign-in" className="underline underline-offset-4">
                   Back to sign in
                 </a>
               </div>
