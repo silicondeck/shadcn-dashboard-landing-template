@@ -160,7 +160,7 @@ Experience the template in action:
 
 ```bash
 git clone https://github.com/silicondeck/shadcn-dashboard-landing-template
-cd shadcn-dashboard
+cd shadcn-dashboard-landing-template
 ```
 
 ### 2. Choose Your Framework
