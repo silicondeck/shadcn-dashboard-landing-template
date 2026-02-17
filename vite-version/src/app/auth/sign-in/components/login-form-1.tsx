@@ -80,7 +80,7 @@ export function LoginForm1({
                         <div className="flex items-center">
                           <FormLabel>Password</FormLabel>
                           <a
-                            href="/auth/forgot-password"
+                            href="/templates/dashboard/shadcn-dashboard-landing-template/auth/forgot-password"
                             className="ml-auto text-sm underline-offset-4 hover:underline"
                           >
                             Forgot your password?

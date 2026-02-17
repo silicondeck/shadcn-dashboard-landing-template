@@ -26,7 +26,7 @@ export function LoginForm2({
           <div className="flex items-center">
             <Label htmlFor="password">Password</Label>
             <a
-              href="/auth/forgot-password-2"
+              href="/templates/dashboard/shadcn-dashboard-landing-template/auth/forgot-password-2"
               className="ml-auto text-sm underline-offset-4 hover:underline"
             >
               Forgot your password?
